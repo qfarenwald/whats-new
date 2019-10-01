@@ -17,20 +17,23 @@ class App extends Component {
       health,
       science,
       technology,
+      currentTopic: local
     }
   }
 
-  selectTopic = (e) => {
-    console.log(e.target.id)
-
+  selectTopic = (topic) => {
+    this.setState({
+      currentTopic: topic
+    })
   }
 
   render () {
     return (
       <div className="app">
         <h1>What's New</h1>
-        <Menu items={Object.keys(this.state)} selectTopic={this.selectTopic}/>
-        <NewsContainer news={this.state.local} />
+        <Menu items={Object.keys(this.state)} selectTopic={this.selectTopic}
+        state={this.state}/>
+        <NewsContainer news={this.state.currentTopic}/>
       </div>
     );
   }
