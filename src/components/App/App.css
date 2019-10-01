@@ -5,8 +5,10 @@
 }
 
 .app {
+  align-items: center;
   display: flex;
-  background: #141527;
+  background: #FFFFFF;
+  flex-direction: column;
   height: 100vh;
   text-align: center;
   width: 100%;

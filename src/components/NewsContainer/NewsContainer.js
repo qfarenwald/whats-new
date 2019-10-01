@@ -6,7 +6,7 @@ const NewsContainer = ( {news} ) => {
   const articles = news.map((article, i) => {
     console.log(article)
     return (
-      <NewsArticle key={i}
+      <NewsArticle key={article.id}
         img={article.img}
         headline={article.headline}
         description={article.description}
