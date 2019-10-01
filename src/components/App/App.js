@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NewsContainer from '../NewsContainer/NewsContainer';
+import Menu from '../Menu/Menu';
 import local from '../../data/local';
 import entertainment from '../../data/entertainment';
 import health from '../../data/health';
@@ -19,11 +20,17 @@ class App extends Component {
     }
   }
 
+  selectTopic = (e) => {
+    console.log(e.target.id)
+
+  }
+
   render () {
     return (
       <div className="app">
         <h1>What's New</h1>
-        <NewsContainer news={this.state.local} />      
+        <Menu items={Object.keys(this.state)} selectTopic={this.selectTopic}/>
+        <NewsContainer news={this.state.local} />
       </div>
     );
   }
