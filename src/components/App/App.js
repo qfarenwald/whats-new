@@ -28,10 +28,16 @@ class App extends Component {
     })
   }
 
+  filterArticles = (search) => {
+    this.setState({
+      currentTopic: search
+    })
+  }
+
   render () {
     return (
       <div className="app">
-        <SearchForm currentTopic={this.state.currentTopic}/>
+        <SearchForm currentTopic={this.state.currentTopic} filterArticles={this.filterArticles}/>
         <h1>What's New</h1>
         <Menu items={Object.keys(this.state)} selectTopic={this.selectTopic}
         state={this.state}/>
