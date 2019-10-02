@@ -1,0 +1,9 @@
+.nav-topics {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+h2 {
+  margin: 20px;
+}
