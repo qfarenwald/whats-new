@@ -1,5 +1,6 @@
-.news-container {
-  width: 50%;
+.article {
+  margin: 20px;
+  width: 500px;
 }
 
 h1 {
