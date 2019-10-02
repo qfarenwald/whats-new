@@ -31,7 +31,7 @@ class SearchForm extends Component {
 
   render () {
     return (
-      <form>
+      <form className="searchForm" onSubmit={this.onCommentSubmit}>
         <input
         type="text"
         placeholder="Search"
@@ -39,7 +39,7 @@ class SearchForm extends Component {
         value={this.state.search}
         onChange={event => this.handleChange(event)}
         />
-        <button value={this.state.search} onClick={event => this.submitSearch(event)}>Search</button>
+        <button type="submit" value={this.state.search}>Search</button>
       </form>
     )
   }
