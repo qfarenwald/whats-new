@@ -4,7 +4,6 @@ import './NewsContainer.css'
 
 const NewsContainer = ( {news} ) => {
   const articles = news.map((article) => {
-    console.log(article)
     return (
       <NewsArticle key={article.id}
         img={article.img}

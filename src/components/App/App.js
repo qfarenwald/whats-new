@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NewsContainer from '../NewsContainer/NewsContainer';
+import SearchForm from '../SearchForm/SearchForm'
 import Menu from '../Menu/Menu';
 import local from '../../data/local';
 import entertainment from '../../data/entertainment';
@@ -30,6 +31,7 @@ class App extends Component {
   render () {
     return (
       <div className="app">
+        <SearchForm currentTopic={this.state.currentTopic}/>
         <h1>What's New</h1>
         <Menu items={Object.keys(this.state)} selectTopic={this.selectTopic}
         state={this.state}/>
