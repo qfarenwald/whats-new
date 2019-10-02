@@ -43,21 +43,6 @@ class SearchForm extends Component {
       </form>
     )
   }
-
-  // render () {
-  //   return (
-  //     <form className="searchForm">
-  //       <input
-  //       type="text"
-  //       placeholder="Enter Keyword"
-  //       name="search"
-  //       value={this.state.search}
-  //       onChange={event => this.handleChange(event)}
-  //       />
-  //       <button type="button" value={this.state.search} onClick={(event) => this.submitSearch(event)}>Search</button>
-  //     </form>
-  //   )
-  // }
 }
 
 export default SearchForm;
