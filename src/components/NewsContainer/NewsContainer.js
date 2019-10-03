@@ -3,6 +3,7 @@ import NewsArticle from '../NewsArticle/NewsArticle';
 import './NewsContainer.css'
 
 const NewsContainer = ( {news} ) => {
+  console.log('news', news)
   const articles = news.map((article) => {
     return (
       <NewsArticle key={article.id}

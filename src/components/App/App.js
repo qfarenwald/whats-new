@@ -18,6 +18,7 @@ class App extends Component {
     this.science = science
     this.technology = technology
     this.topics = ['local', 'entertainment', 'health', 'science', 'technology']
+    this.string = 'local'
     this.state = {
       currentTopic: this.local
     }
@@ -27,20 +28,23 @@ class App extends Component {
     this.setState({
       currentTopic: this[topic]
     })
+    this.string = topic
   }
 
-  displaySearch = (searchResults) => {
+  displaySearch = (filteredArray) => {
     this.setState({
-      currentTopic: searchResults
+      currentTopic: filteredArray
     })
   }
 
   search = (searchValue) => {
-    let filteredArray = this.state.currentTopic.filter((topic) => {
-      return topic.headline.toUpperCase().includes(searchValue) || topic.description.toUpperCase().includes(searchValue)
+    this.setState({
+      currentTopic: this[this.string]
+    }, () => {
+      this.displaySearch(this.state.currentTopic.filter((topic) => {
+       return topic.headline.toUpperCase().includes(searchValue) || topic.description.toUpperCase().includes(searchValue)
+     }))
     })
-
-    this.displaySearch(filteredArray)
   }
 
   render () {
@@ -48,7 +52,6 @@ class App extends Component {
       <div className="app">
         <SearchForm
           currentTopic={this.state.currentTopic}
-          displaySearch={this.displaySearch}
           search={this.search}
         />
         <h1>The Hub</h1>
