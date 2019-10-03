@@ -9,5 +9,6 @@ h2 {
 }
 
 h2:hover {
+  color: #fcba03;
   cursor: pointer;
 }
