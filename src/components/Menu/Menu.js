@@ -1,11 +1,10 @@
 import React from 'react';
 import './Menu.css'
 
-const Menu = ( {items, selectTopic, state} ) => {
-  items.pop()
-  const nav = items.map((item, i) => {
+const Menu = ( props ) => {
+  const nav = props.topics.map((topic, i) => {
     return (
-        <h2 id={item} key={i} onClick={() => selectTopic(state[item])}>{item}</h2>
+        <h2 id={topic} key={i} onClick={() => props.selectTopic(topic)}>{topic}</h2>
     )
   })
 
@@ -17,3 +16,5 @@ const Menu = ( {items, selectTopic, state} ) => {
 }
 
 export default Menu;
+
+// <h2 id={item} key={i} onClick={() => selectTopic(state[item])}>{item}</h2>

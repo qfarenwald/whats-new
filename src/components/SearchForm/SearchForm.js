@@ -17,12 +17,9 @@ class SearchForm extends Component {
 
   submitSearch = event => {
     event.preventDefault();
-    let searchInput = event.target.value.toUpperCase();
-    let filteredArray = this.props.currentTopic.filter((topic) => {
-      return topic.headline.toUpperCase().includes(searchInput) || topic.description.toUpperCase().includes(searchInput)
-    })
+    let searchInput = this.state.search.toUpperCase();
 
-    this.props.filterArticles(filteredArray)
+    this.props.search(searchInput)
 
     this.setState({
       search: ''

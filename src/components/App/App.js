@@ -12,36 +12,53 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
+    this.local = local
+    this.entertainment = entertainment
+    this.health = health
+    this.science = science
+    this.technology = technology
+    this.topics = ['local', 'entertainment', 'health', 'science', 'technology']
     this.state = {
-      local,
-      entertainment,
-      health,
-      science,
-      technology,
-      currentTopic: local
+      currentTopic: this.local
     }
   }
 
   selectTopic = (topic) => {
     this.setState({
-      currentTopic: topic
+      currentTopic: this[topic]
     })
   }
 
-  filterArticles = (search) => {
+  displaySearch = (searchResults) => {
     this.setState({
-      currentTopic: search
+      currentTopic: searchResults
     })
+  }
+
+  search = (searchValue) => {
+    let filteredArray = this.state.currentTopic.filter((topic) => {
+      return topic.headline.toUpperCase().includes(searchValue) || topic.description.toUpperCase().includes(searchValue)
+    })
+
+    this.displaySearch(filteredArray)
   }
 
   render () {
     return (
       <div className="app">
-        <SearchForm currentTopic={this.state.currentTopic} filterArticles={this.filterArticles}/>
+        <SearchForm
+          currentTopic={this.state.currentTopic}
+          displaySearch={this.displaySearch}
+          search={this.search}
+        />
         <h1>The Hub</h1>
-        <Menu items={Object.keys(this.state)} selectTopic={this.selectTopic}
-        state={this.state}/>
-        <NewsContainer news={this.state.currentTopic}/>
+        <Menu
+          topics={this.topics}
+          selectTopic={this.selectTopic}
+        />
+        <NewsContainer
+          news={this.state.currentTopic}
+        />
       </div>
     );
   }
