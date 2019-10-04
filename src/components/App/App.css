@@ -7,7 +7,7 @@
 .app {
   align-items: center;
   display: flex;
-  background: #FFFFFF;
+  background-color: #ffffff;
   flex-direction: column;
   height: 100vh;
   text-align: center;
