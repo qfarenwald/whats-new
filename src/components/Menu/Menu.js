@@ -16,5 +16,3 @@ const Menu = ( props ) => {
 }
 
 export default Menu;
-
-// <h2 id={item} key={i} onClick={() => selectTopic(state[item])}>{item}</h2>
