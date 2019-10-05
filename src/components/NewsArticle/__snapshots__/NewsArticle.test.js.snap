@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewsArticle should match the snapshot with all data pass in correctly 1`] = `
+<div
+  className="article"
+>
+  <div
+    className="img-container"
+  >
+    <img
+      alt=""
+      src="https://theknow.denverpost.com/wp-content/uploads/2016/03/CDXXTHEWHODSC_4082x.jpg"
+    />
+  </div>
+  <article>
+    <h3>
+      The Who postpones Denver Concert at the Pepsi Center
+    </h3>
+    <p>
+      Classic-rock band The Who has postponed its Denver concert, set for Sunday, Sept. 29, after an illness robbed singer Roger Daltrey of his voice, the band said on Twitter.
+    </p>
+    <a
+      href="https://theknow.denverpost.com/2019/09/27/the-who-postpones-denver-concert/225182/"
+    >
+      Full Story
+    </a>
+  </article>
+</div>
+`;
