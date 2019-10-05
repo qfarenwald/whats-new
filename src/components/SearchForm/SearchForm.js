@@ -21,6 +21,10 @@ class SearchForm extends Component {
 
     this.props.search(searchInput)
 
+    this.resetInputs();
+  }
+
+  resetInputs = () => {
     this.setState({
       search: ''
     })

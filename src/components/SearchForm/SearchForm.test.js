@@ -89,4 +89,20 @@ describe('SearchForm', () => {
     expect(wrapper.state('search')).toEqual(searchEvent.target.value)
   })
 
+  it('should reset search value in state to an empty string', () => {
+    const mockState = {
+      search: 'chicken'
+    }
+
+    const expectState = {
+      search: ''
+    }
+
+    wrapper.setState(mockState);
+
+    wrapper.instance().resetInputs();
+
+    expect(wrapper.state()).toEqual(expectState);
+  })
+
 })
