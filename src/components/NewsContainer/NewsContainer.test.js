@@ -65,8 +65,12 @@ describe('NewsContainer', () => {
           }
         ]}
       />
-
     )
     expect(wrapper).toMatchSnapshot();
   })
+
+  // it('should map through news passed to it via props', () => {
+  //
+  // })
+
 })
