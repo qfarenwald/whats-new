@@ -7,7 +7,9 @@
 .app {
   align-items: center;
   display: flex;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  /* background-color: #F3F6F7;
+    background: linear-gradient(to bottom, #fcd66f 0%,#fcd66f 50%,#F3F6F7 50%,#F3F6F7 100%); */
   flex-direction: column;
   height: 100vh;
   text-align: center;
