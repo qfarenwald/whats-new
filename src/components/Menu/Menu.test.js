@@ -10,6 +10,20 @@ describe('Menu', () => {
         selectTopic={jest.fn()}
       />
     )
+
     expect(wrapper).toMatchSnapshot();
   })
+
+  // it('should run selectTopic on click', () => {
+  //   const mockSelectTopic = jest.fn();
+  //   const wrapper = shallow(
+  //     <Menu
+  //       topics={['local', 'entertainment', 'health', 'science', 'technology']}
+  //       selectTopic={jest.fn()}
+  //     />
+  //   )
+  //   wrapper.find('h2').at(0).simulate('click');
+  //
+  //   expect(mockSelectTopic).toHaveBeenCalled();
+  // })
 })
