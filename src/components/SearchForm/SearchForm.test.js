@@ -76,7 +76,7 @@ describe('SearchForm', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
-  it('should update state with new search string', () => {
+  it('should update state with new search string when handleChange is run', () => {
     const searchEvent = {
       target: {
         search: 'chicken'
@@ -88,7 +88,7 @@ describe('SearchForm', () => {
     expect(wrapper.state('search')).toEqual(searchEvent.target.value)
   })
 
-  it('should reset search value in state to an empty string', () => {
+  it('should reset search value in state to an empty string when resetInputs is run', () => {
     const mockState = {
       search: 'chicken'
     }
@@ -102,20 +102,6 @@ describe('SearchForm', () => {
     expect(wrapper.state()).toEqual(expectState);
   })
 
-  // it('should call search and reset inputs when submitSearch is called', () => {
-  //   const mockSearch = jest.fn();
-  //   const mockSearchInput = 'CHICKEN';
-  //   const mockEvent = {
-  //     preventDefault: jest.fn()
-  //   }
-  //   wrapper.instance().resetInputs = jest.fn();
-  //
-  //   wrapper.instance().submitSearch(mockEvent);
-  //
-  //   expect(mockSearch).toHaveBeenCalledWith(mockSearchInput);
-  //   expect(wrapper.instance().resetInputs).toHaveBeenCalled();
-  // })
-
   it('should run submitSearch when button is clicked', () => {
     wrapper.instance().submitSearch = jest.fn();
     wrapper.instance().forceUpdate();
@@ -126,7 +112,20 @@ describe('SearchForm', () => {
     wrapper.find('button').simulate('click', mockEvent);
 
     expect(wrapper.instance().submitSearch).toHaveBeenCalledWith(mockEvent);
+  })
 
+  it('should call search and resetInputs when submitSearch is called', () => {
+    const mockSearch = jest.fn();
+    const mockSearchInput = 'CHICKEN';
+    const mockEvent = {
+      preventDefault: jest.fn()
+    }
+    wrapper.instance().resetInputs = jest.fn();
+
+    wrapper.instance().submitSearch(mockEvent);
+
+    expect(mockSearch).toHaveBeenCalled();
+    expect(wrapper.instance().resetInputs).toHaveBeenCalled();
   })
 
 })

@@ -19,7 +19,7 @@ class SearchForm extends Component {
     event.preventDefault();
     let searchInput = this.state.search.toUpperCase();
 
-    this.props.search(searchInput)
+    this.props.search(searchInput);
 
     this.resetInputs();
   }
