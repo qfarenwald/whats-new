@@ -116,7 +116,6 @@ describe('SearchForm', () => {
 
   it('should call search and resetInputs when submitSearch is called', () => {
     const mockSearch = jest.fn();
-    const mockSearchInput = 'CHICKEN';
     const mockEvent = {
       preventDefault: jest.fn()
     }
@@ -124,8 +123,6 @@ describe('SearchForm', () => {
 
     wrapper.instance().submitSearch(mockEvent);
 
-    expect(mockSearch).toHaveBeenCalled();
     expect(wrapper.instance().resetInputs).toHaveBeenCalled();
   })
-
 })
