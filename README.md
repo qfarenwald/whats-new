@@ -25,5 +25,3 @@ Good commit habits - atomic commits that log small, focused changesets.
 Built with `create-react-app`.
 
 Tested with Jest/Enzyme.
-
-### GitPages

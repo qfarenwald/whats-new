@@ -68,7 +68,7 @@ exports[`App should match snapshot with correct data 1`] = `
     search={[Function]}
   />
   <h1>
-    What's New
+    The Hub
   </h1>
   <Menu
     selectTopic={[Function]}

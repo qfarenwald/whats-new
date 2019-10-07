@@ -54,7 +54,7 @@ class App extends Component {
           currentTopic={this.state.currentTopic}
           search={this.search}
         />
-        <h1>What's New</h1>
+        <h1>The Hub</h1>
         <Menu
           topics={this.topics}
           selectTopic={this.selectTopic}
