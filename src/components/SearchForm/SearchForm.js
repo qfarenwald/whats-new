@@ -7,13 +7,13 @@ class SearchForm extends Component {
     this.state = {
       search: ''
     }
-  }
+  };
 
   handleChange = event => {
     this.setState({
       search: event.target.value
     })
-  }
+  };
 
   submitSearch = event => {
     event.preventDefault();
@@ -22,13 +22,13 @@ class SearchForm extends Component {
     this.props.search(searchInput);
 
     this.resetInputs();
-  }
+  };
 
   resetInputs = () => {
     this.setState({
       search: ''
     })
-  }
+  };
 
   render () {
     return (
@@ -43,7 +43,7 @@ class SearchForm extends Component {
         <button type="submit" value={this.state.search} onClick={(event) => this.submitSearch(event)}>Search</button>
       </form>
     )
-  }
-}
+  };
+};
 
 export default SearchForm;

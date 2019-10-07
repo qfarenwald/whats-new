@@ -6,13 +6,13 @@ const Menu = ( props ) => {
     return (
         <h2 id={topic} key={i} onClick={() => props.selectTopic(topic)}>{topic}</h2>
     )
-  })
+  });
 
   return (
     <div className="nav-topics">
     {nav}
     </div>
   )
-}
+};
 
 export default Menu;

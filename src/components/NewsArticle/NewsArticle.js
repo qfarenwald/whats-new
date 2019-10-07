@@ -14,6 +14,6 @@ const NewsArticle = ( {img, headline, description, url} ) => {
       </article>
     </div>
   )
-}
+};
 
 export default NewsArticle;

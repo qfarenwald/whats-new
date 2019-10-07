@@ -12,7 +12,7 @@ describe('App', () => {
     const div = document.createElement('div');
     ReactDOM.render(<App />, div);
     ReactDOM.unmountComponentAtNode(div);
-  })
+  });
 
   it('should match snapshot with correct data', () => {
     const wrapper = shallow(
@@ -20,7 +20,7 @@ describe('App', () => {
     )
 
     expect(wrapper).toMatchSnapshot();
-  })
+  });
 
   it('should update state when selectTopic is called', () => {
     const wrapper = shallow(<App />);
@@ -87,7 +87,7 @@ describe('App', () => {
     wrapper.instance().selectTopic(mockTopic);
 
     expect(wrapper.state('currentTopic')).toEqual(expected);
-  })
+  });
 
   it('should update state when displaySearch is called', () => {
     const wrapper = shallow(<App />);
@@ -99,23 +99,23 @@ describe('App', () => {
         description: 'The 24-foot-tall chicken skeleton towers over the people who pass through the main hall of the Denver Central Library. Skeletal wings extend to the side, and it looks downright prehistoric.',
         url: 'https://www.cpr.org/2019/09/27/giant-chicken-skeleton-in-denvers-central-library-stands-for-more-than-just-dinner/'
       }
-    ]
+    ];
 
     wrapper.instance().displaySearch(mockFilteredArray);
 
     expect(wrapper.state('currentTopic')).toEqual(mockFilteredArray);
-  })
+  });
 
   it('should update state when search is called', () => {
     const wrapper = shallow(<App />);
     const mockSearchValue = 'CHICKEN';
     const mockExpected = [
       {"description": "The 24-foot-tall chicken skeleton towers over the people who pass through the main hall of the Denver Central Library. Skeletal wings extend to the side, and it looks downright prehistoric.", "headline": "Giant Chicken Skeleton In Denver’s Central Library Stands For More Than Just Dinner", "id": 2, "img": "https://i0.wp.com/wp-cpr.s3.amazonaws.com/uploads/2019/09/cpr-swolf_black-cube-monumental_DSC8170.jpg?resize=2064,1376", "url": "https://www.cpr.org/2019/09/27/giant-chicken-skeleton-in-denvers-central-library-stands-for-more-than-just-dinner/"}
-    ]
+    ];
 
     wrapper.instance().search(mockSearchValue);
 
     expect(wrapper.state('currentTopic')).toEqual(mockExpected);
-  })
+  });
 
-})
+});

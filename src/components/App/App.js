@@ -12,30 +12,30 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
-    this.local = local
-    this.entertainment = entertainment
-    this.health = health
-    this.science = science
-    this.technology = technology
-    this.topics = ['local', 'entertainment', 'health', 'science', 'technology']
-    this.string = 'local'
+    this.local = local;
+    this.entertainment = entertainment;
+    this.health = health;
+    this.science = science;
+    this.technology = technology;
+    this.topics = ['local', 'entertainment', 'health', 'science', 'technology'];
+    this.string = 'local';
     this.state = {
       currentTopic: this.local
-    }
-  }
+    };
+  };
 
   selectTopic = (topic) => {
     this.setState({
       currentTopic: this[topic]
-    })
-    this.string = topic
-  }
+    });
+    this.string = topic;
+  };
 
   displaySearch = (filteredArray) => {
     this.setState({
       currentTopic: filteredArray
-    })
-  }
+    });
+  };
 
   search = (searchValue) => {
     this.setState({
@@ -44,8 +44,8 @@ class App extends Component {
       this.displaySearch(this.state.currentTopic.filter((topic) => {
        return topic.headline.toUpperCase().includes(searchValue) || topic.description.toUpperCase().includes(searchValue)
      }))
-    })
-  }
+   });
+ };
 
   render () {
     return (
@@ -64,7 +64,7 @@ class App extends Component {
         />
       </div>
     );
-  }
-}
+  };
+};
 
 export default App;

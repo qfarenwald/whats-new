@@ -70,11 +70,11 @@ describe('SearchForm', () => {
         search={jest.fn()}
       />
     )
-  })
+  });
 
   it('should match snapshot with correct data', () => {
     expect(wrapper).toMatchSnapshot();
-  })
+  });
 
   it('should update state with new search string when handleChange is run', () => {
     const searchEvent = {
@@ -86,7 +86,7 @@ describe('SearchForm', () => {
     wrapper.instance().handleChange(searchEvent)
 
     expect(wrapper.state('search')).toEqual(searchEvent.target.value)
-  })
+  });
 
   it('should reset search value in state to an empty string when resetInputs is run', () => {
     const mockState = {
@@ -100,7 +100,7 @@ describe('SearchForm', () => {
     wrapper.instance().resetInputs();
 
     expect(wrapper.state()).toEqual(expectState);
-  })
+  });
 
   it('should run submitSearch when button is clicked', () => {
     wrapper.instance().submitSearch = jest.fn();
@@ -112,7 +112,7 @@ describe('SearchForm', () => {
     wrapper.find('button').simulate('click', mockEvent);
 
     expect(wrapper.instance().submitSearch).toHaveBeenCalledWith(mockEvent);
-  })
+  });
 
   it('should call search and resetInputs when submitSearch is called', () => {
     const mockSearch = jest.fn();
@@ -124,5 +124,5 @@ describe('SearchForm', () => {
     wrapper.instance().submitSearch(mockEvent);
 
     expect(wrapper.instance().resetInputs).toHaveBeenCalled();
-  })
-})
+  });
+});

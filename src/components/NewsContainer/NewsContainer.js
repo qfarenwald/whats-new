@@ -12,15 +12,14 @@ const NewsContainer = ( {news} ) => {
         url={article.url}
       />
     )
-  })
+  });
 
   return (
     <div className="news-container">
       {articles}
     </div>
   )
-
-}
+};
 
 
 export default NewsContainer;
